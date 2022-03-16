@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/last_name" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/signupBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
@@ -98,7 +98,7 @@
         android:layout_marginBottom="64dp"
         android:background="@drawable/oval"
         android:backgroundTint="@color/white"
-        android:enabled="false"
+        android:enabled="true"
         android:text="Sign up"
 
         app:layout_constraintBottom_toBottomOf="parent"

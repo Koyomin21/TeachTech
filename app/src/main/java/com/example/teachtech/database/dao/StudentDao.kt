@@ -13,7 +13,7 @@ interface StudentDao {
     fun getStudentById(id: Int?): Student?
 
     @Insert
-    fun insertStudent(student: Student?)
+    fun insertStudent(student: Student?): Long
 
     @Delete
     fun deleteStudent(student: Student?)

@@ -5,10 +5,10 @@ import com.example.teachtech.database.entity.Student
 class StudentRepository(
     private val studentDao: StudentDao
 ) {
-    suspend fun insertStudent(student: Student) =
-        studentDao.insertStudent(student)
+    fun insertStudent(student: Student): Long {
+        return studentDao.insertStudent(student)}
 
-    suspend fun updatetudent(student: Student) =
+    suspend fun updateStudent(student: Student) =
         studentDao.updateStudent(student)
 
     suspend fun deleteStudent(student: Student) =
