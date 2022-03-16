@@ -1,8 +1,6 @@
 package views.fragments
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,44 +8,39 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.teachtech.R
+import com.example.teachtech.presenters.LoginPresenter
+import interfaces.presenterInterfaces.ILoginPresenter
 import interfaces.viewInterfaces.ILoginView
 import mu.KotlinLogging
 
 class LoginFragment : Fragment(), ILoginView {
 
+    private lateinit var presenter: ILoginPresenter;
     private val logger = KotlinLogging.logger {}
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-
-
-
-
-        return view;
-    }
-
+    ): View? = inflater.inflate(R.layout.fragment_login, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = LoginPresenter(this)
 
-        val loginButton = view.findViewById<Button>(R.id.loginBtn)
-        var email:String?
-
-
-        logger.info{"onViewCreated: Hello! " + loginButton.text.toString()}
+        val loginBtn = view.findViewById<Button>(R.id.loginBtn)
+        logger.info { "Received Button: " + loginBtn.text.toString() }
 
 
-        loginButton.setOnClickListener{ view->
-            val email: TextView = view.findViewById<EditText>(R.id.email) as TextView
-            logger.info{"Login Clicked: " + email.text.toString()}
-            val test = view.findViewById<EditText>(R.id.test)
-            test.setText("LA LA LA LA RA DA")
+        loginBtn.setOnClickListener{
+            val email = view.findViewById<EditText>(R.id.email).text.toString()
+            val password = view.findViewById<EditText>(R.id.password).text.toString()
+
+            presenter.login(email, password)
         }
+
     }
 
 

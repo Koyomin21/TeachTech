@@ -20,5 +20,4 @@ class StudentRepository(
     suspend fun getStudentById(id: Int) =
         studentDao.getStudentById(id)
 
-
 }
