@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/testFragment"
+        android:title="test"
+        android:icon="@drawable/ic_baseline_done_outline_24"/>
+    <item android:id="@+id/ratingFragment"
+        android:title="rating"
+        android:icon="@drawable/ic_baseline_bar_chart_24"/>
+    <item android:id="@+id/qrFragment"
+        android:title="qr"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"/>
+    <item android:id="@+id/profileFragment"
+        android:title="profile"
+        android:icon="@drawable/ic_baseline_account_circle_24"/>
+<!--    <item android:id="@+id/settingsFragment"-->
+<!--        android:title="settings"-->
+<!--        android:icon="@drawable/ic_baseline_settings_24"/>-->
+</menu>
